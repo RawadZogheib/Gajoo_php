@@ -1,16 +1,16 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/Exception.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/SMTP.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/autoload.php';
-      require  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)vCode.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/Exception.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/SMTP.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/autoload.php';
+      require  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)vCode.php';
 
-      $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)codeException.php';
+      $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeException.php';
       
       $emailRegExp = "/[a-zA-Z0-9]+@(g|hot)mail.com/";
 
@@ -18,7 +18,7 @@ require $locVersionTest;
 if(!empty($data->email)){
   $email = htmlspecialchars($data->email);
 
-    $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
+    $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
 
     require $locConfig;
     $con=con($server);
@@ -53,14 +53,14 @@ if(!empty($data->email)){
           //var_dump($mail);
         } else {
           //echo "Email sent successfully";
-          require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getAccountId.inc.php';
+          require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';
           if($gg1['account_Id']){
             $account_Id = $gg1['account_Id'];
-            require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getAccIdFromForgetPass.inc.php';
+            require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getAccIdFromForgetPass.inc.php';
             if($fp1["nbr"] > 0){
-              require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)updateCodeForgetPass.inc.php';
+              require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)updateCodeForgetPass.inc.php';
             }else{
-              require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)insertCodeForgetPass.inc.php';
+              require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)insertCodeForgetPass.inc.php';
             }
           }else{
             require $locCodeException;

@@ -1,19 +1,19 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/Exception.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/phpmailer/phpmailer/src/SMTP.php';
-      require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Composer/vendor/autoload.php';
-      require  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)vCode.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/Exception.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/phpmailer/phpmailer/src/SMTP.php';
+      require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Composer/vendor/autoload.php';
+      require  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)vCode.php';
 
-      $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)codeException.php';
-      $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
-      $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-      $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)true.php';
+      $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeException.php';
+      $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
+      $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+      $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
       
       $emailRegExp = "/[a-zA-Z0-9]+@(g|hot)mail.com/";
 
@@ -53,18 +53,18 @@ require $locVersionTest;
                 //var_dump($mail);
             } else {
                 //echo "Email sent successfully";
-                require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getAccountId.inc.php';// la nshuf eza n5ala2 l account
+                require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';// la nshuf eza n5ala2 l account
                 if($gg1['account_Id']){
-                require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getAccountIdFromMailCode.inc.php';// get Id
+                require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getAccountIdFromMailCode.inc.php';// get Id
                     if($mc["nbr"] > 0){
                         //require $locTrue;
                         $account_Id = $mc["account_Id"];
-                        require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)updateCode.inc.php';
-                        //require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)insertCountCodeSent.inc.php';//insert the counter
-                        //require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getCounter.inc.php'; // get the counter
+                        require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)updateCode.inc.php';
+                        //require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)insertCountCodeSent.inc.php';//insert the counter
+                        //require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getCounter.inc.php'; // get the counter
                     }else{
                         $account_Id = $gg1['account_Id'];
-                        require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)insertCode.inc.php';
+                        require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)insertCode.inc.php';
                         //require $locTrue;
                     }
                 }else{

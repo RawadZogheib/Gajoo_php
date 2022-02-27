@@ -1,26 +1,26 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 $option = array('cost'=>11);
 
 
-$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
+$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
 if(!empty($data->email) && !empty($data->password)){
 
 	$email = htmlspecialchars($data->email);
 	$password = htmlspecialchars($data->password);
 
-	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-	$locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)tokenCreate.php';
-	$locPasswordUpdate = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)passwordUpdate.inc.php';
-	$locModelLogin = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)login.inc.php';
-	$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)success.php';
-	$locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Control/(Control)getGlobals.php';
-	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error4.php';
-	$locError8 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error8.php';
-	$locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)true.php';
-	$locGetIsRegistered = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getIsRegistered.inc.php';
+	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+	$locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCreate.php';
+	$locPasswordUpdate = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)passwordUpdate.inc.php';
+	$locModelLogin = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)login.inc.php';
+	$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
+	$locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)getGlobals.php';
+	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
+	$locError8 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error8.php';
+	$locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+	$locGetIsRegistered = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getIsRegistered.inc.php';
 
 	require $locConfig;
 	$con=con($server);
@@ -45,7 +45,7 @@ if(!empty($data->email) && !empty($data->password)){
 						if($reg1["isRegistered"] == 1){
 							require $locGetGlobals;
 						}else{
-							require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)phpMailer.php';
+							require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
 							require $locTrue;
 						}
 					}else{
@@ -62,7 +62,7 @@ if(!empty($data->email) && !empty($data->password)){
 					if($reg1["isRegistered"] == 1){
 						require $locGetGlobals;
 					}else{
-						require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)phpMailer.php';
+						require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
 						require $locTrue;
 					}
 				}else{

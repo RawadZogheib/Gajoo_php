@@ -1,8 +1,8 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
-$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
+$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
 if( !empty($data->fname) && !empty($data->lname) && !empty($data->userName) && !empty($data->email)
 	&& !empty($data->password) && !empty($data->repassword)  && !empty($data->phoneNumber)
@@ -21,26 +21,25 @@ if( !empty($data->fname) && !empty($data->lname) && !empty($data->userName) && !
 	$isRegistered = htmlspecialchars($data->isRegistered);
 
 
-	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-	$locModelEmail = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)email.inc.php';
-	$locError2_5 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error2_5.php';
-	$locError2_3 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error2_3.php';
-	$locError3 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error3.php';
-	$locModelUsername = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)username.inc.php';
-	$locError1 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error1.php';
-	$locError2_1 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error2_1.php';
-	$locError2_2 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error2_2.php';
-	$locPhoneNb = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)phoneNb.inc.php';
-	$locError2_7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error2_7.php';
-	$locError9 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error9.php';
-	$locEncryptSet = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)encryptSet.php';
-	$locModelInsert = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)insert.inc.php';
-	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error4.php';
-	$locError5 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error5.php';
-	$locError6 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error6.php';
-	$locSendMail = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)phpMailer.php';
-	$locgetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)getGlobals.php';
-	$locInitWallet $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)insertWallet.inc.php';
+	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+	$locModelEmail = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)email.inc.php';
+	$locError2_5 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_5.php';
+	$locError2_3 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_3.php';
+	$locError3 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error3.php';
+	$locModelUsername = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)username.inc.php';
+	$locError1 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error1.php';
+	$locError2_1 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_1.php';
+	$locError2_2 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_2.php';
+	$locPhoneNb = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)phoneNb.inc.php';
+	$locError2_7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_7.php';
+	$locError9 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error9.php';
+	$locEncryptSet = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)encryptSet.php';
+	$locModelInsert = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)insert.inc.php';
+	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
+	$locError5 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error5.php';
+	$locError6 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error6.php';
+	$locSendMail = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
+	$locgetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)getGlobals.php';
 	
 	$userNameRegExp = "/^[a-zA-Z0-9_\.]*$/";
 	$phoneRegExp = "/(961|1|86|357|20|33|91|39)[0-9]{8}\b/";

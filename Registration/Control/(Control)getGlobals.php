@@ -8,11 +8,11 @@
 	
 	$json_array[0] = 'error10';
 
-	require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getGlobals.inc.php';
+	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getGlobals.inc.php';
     if(mysqli_num_rows($xx)>0){
 		$t1 = 1;
 		$ress = mysqli_fetch_assoc($xx);
-		$accountId=$ress["account_Id"]
+		$accountId=$ress["account_Id"];
 		$json_array[1] = array($accountId,
 							   $ress["account_email"]
 									);

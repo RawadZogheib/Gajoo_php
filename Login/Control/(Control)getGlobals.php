@@ -9,7 +9,7 @@
 	$json_array[0] = 'error10';
 	$json_array[1] = $token;
 
-	require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getGlobals.inc.php';
+	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getGlobals.inc.php';
     if(mysqli_num_rows($xx)>0){
 		$t1 = 1;
 		$ress = mysqli_fetch_assoc($xx);

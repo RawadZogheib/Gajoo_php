@@ -1,23 +1,23 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
-$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
+$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
     if(!empty($data->code) && !empty($data->email)){
         $code = htmlspecialchars($data->code);
         $email = htmlspecialchars($data->email);
 
-        $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-        $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getAccountId.inc.php';
-        //$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)success.php';
-        $locCodeFailed = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)codeFailed.php';
-        $locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Control/(Control)getGlobals.php';
-        $locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error4.php';
-        $locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)tokenCreate.php';
-        $locDeleteCode = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)deleteCode.inc.php';
+        $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+        $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';
+        //$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
+        $locCodeFailed = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeFailed.php';
+        $locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)getGlobals.php';
+        $locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
+        $locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCreate.php';
+        $locDeleteCode = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)deleteCode.inc.php';
         
-        //$locErrException = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)errorException.php';
+        //$locErrException = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)errorException.php';
 
         require $locConfig;
         $con=con($server);
@@ -25,13 +25,13 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)er
         require $locGetAccId;
         if($gg1['account_Id']){
             $account_Id = $gg1['account_Id'];
-            require  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getCode.inc.php';
+            require  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getCode.inc.php';
             //echo $cc1['vCode'];
             if($cc1['vCode']){
                 if($code == $cc1['vCode']){
                     require $locTokenCreate; //return $token & $tokenHashed
 					if($yy2){
-                        require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)isRegistered.inc.php';
+                        require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)isRegistered.inc.php';
                         require $locGetGlobals;
                         require $locDeleteCode;
                         

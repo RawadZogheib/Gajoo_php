@@ -1,8 +1,8 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
-$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
+$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
 
 if(!empty($data->email) && !empty($data->password)  && !empty($data->repassword)){
@@ -10,11 +10,11 @@ if(!empty($data->email) && !empty($data->password)  && !empty($data->repassword)
     $password = htmlspecialchars($data->password);
 	$repassword = htmlspecialchars($data->repassword);
 
-    $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-    $locEncryptSet = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Control/(Control)encryptSet.php';
-    $locUpdatePass = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)updatePass.inc.php';
-    $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getAccountId.inc.php';
-    $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)true.php';
+    $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+    $locEncryptSet = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)encryptSet.php';
+    $locUpdatePass = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)updatePass.inc.php';
+    $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';
+    $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
 
     $passRegExp = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&:,?_-]).{8,}$/";
 

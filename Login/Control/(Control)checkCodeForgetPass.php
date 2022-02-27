@@ -1,24 +1,24 @@
 <?php
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
-$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error7.php';
+$locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
     if(!empty($data->code) && !empty($data->email)){
         $code = htmlspecialchars($data->code);
         $email = htmlspecialchars($data->email);
 
-        $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Model/(Model)config.inc.php';
-        $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Registration/Model/(Model)getAccountId.inc.php';
-        //$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)success.php';
-        $locCodeFailed = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)codeFailed.php';
-        $locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Control/(Control)getGlobals.php';
-        //$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)error4.php';
-        $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)true.php';
-        //$locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Config/Control/(Control)tokenCreate.php';
-        $locDeleteCodeForgPass = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)deleteCodeForgPass.inc.php';
+        $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
+        $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';
+        //$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
+        $locCodeFailed = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeFailed.php';
+        $locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)getGlobals.php';
+        //$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
+        $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+        //$locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCreate.php';
+        $locDeleteCodeForgPass = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)deleteCodeForgPass.inc.php';
         
-        //$locErrException = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)errorException.php';
+        //$locErrException = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)errorException.php';
 
         require $locConfig;
         $con=con($server);
@@ -27,7 +27,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)er
         require $locGetAccId;
         if(mysqli_num_rows($g1) > 0){
             $account_Id = $gg1['account_Id'];
-            require  $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Login/Model/(Model)getCodeForgPass.inc.php';
+            require  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getCodeForgPass.inc.php';
             //echo $cc1['vCode'];
             if(mysqli_num_rows($k1) > 0){
                 $kk1 = mysqli_fetch_assoc($k1);
