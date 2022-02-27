@@ -79,7 +79,6 @@ if( !empty($data->fname) && !empty($data->lname) && !empty($data->userName) && !
 							require $locModelInsert;
 							if($mq){
 								require $locgetGlobals;
-								require $locInitWallet;
 								require $locSendMail;//send Mail
 
 								
