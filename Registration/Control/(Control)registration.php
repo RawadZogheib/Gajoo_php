@@ -6,7 +6,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.ph
 
 if( !empty($data->fname) && !empty($data->lname) && !empty($data->userName) && !empty($data->email)
 	&& !empty($data->password) && !empty($data->repassword)  && !empty($data->phoneNumber)
-	&& !empty($data->gender) && !empty($data->dateOfBirth) ){
+	&& !empty($data->gender) && !empty($data->dateOfBirth) && !empty($data->country) && !empty($data->language) ){
 	
 	$fname = htmlspecialchars($data->fname);
 	$lname = htmlspecialchars($data->lname);
@@ -18,6 +18,8 @@ if( !empty($data->fname) && !empty($data->lname) && !empty($data->userName) && !
 	$phoneNumber = htmlspecialchars($data->phoneNumber);
 	$dateOfBirth = htmlspecialchars($data->dateOfBirth);
 	$phoneNumberPlus = '+'.$phoneNumber;
+	$country = htmlspecialchars($data->country);
+	$language = htmlspecialchars($data->language);
 	$isRegistered = htmlspecialchars($data->isRegistered);
 
 
