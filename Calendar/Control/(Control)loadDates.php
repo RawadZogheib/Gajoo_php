@@ -29,11 +29,11 @@ if(require $locTokenCheck){
     if(mysqli_num_rows($xx2)>0){
         $t2 = 1;
         while($res2 = mysqli_fetch_assoc($xx2)){	
-            $greenList[] = $res2["course_date_of_begin"];
+            $redList[] = $res2["course_date_of_begin"];
         }	
     }else  if(mysqli_num_rows($xx2) == 0){
         $t2 = 2;
-        $greenList = array();
+        $redList = array();
     } 
 
     $json_array[0] = 'error4';
