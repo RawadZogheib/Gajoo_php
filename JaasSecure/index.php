@@ -43,9 +43,10 @@
                 videoInput: '<deviceLabel>'
               },
               interfaceConfigOverwrite: { SETTINGS_SECTIONS: [ 'devices', 'language', 'moderator', 'calendar', 'sounds' ] },
-              // userInfo: {
-              // displayName: ' '
-              // },
+              userInfo: {
+              displayName: ' '
+              
+              },
           };
           api = new JitsiMeetExternalAPI(domain, options);
         }
