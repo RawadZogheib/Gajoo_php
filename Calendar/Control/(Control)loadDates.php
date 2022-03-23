@@ -1,12 +1,12 @@
 <?php 
 
-$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo/Config/Control/(Control)versionTest.php';
+$locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
 
-$locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo/Config/Control/(Control)tokenCheck.php';
+$locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCheck.php';
 if(require $locTokenCheck){
 
-    $locGetDates = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo/Calendar/Model/(Model)getDates.inc.php';
+    $locGetDates = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Calendar/Model/(Model)getDates.inc.php';
 
     $Items = array();
     $t=0;
