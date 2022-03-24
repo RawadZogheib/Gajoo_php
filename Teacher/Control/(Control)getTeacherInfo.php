@@ -34,7 +34,7 @@ require $locVersionTest;
 						);
 					}
 				}
-			}else $json_array[1] = [];
+			}
 		}
 	}else $json_array[1] = [];
 
