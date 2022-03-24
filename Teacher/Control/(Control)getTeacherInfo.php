@@ -11,6 +11,7 @@ require $locVersionTest;
 	
 	$json_array[0] = 'error10';
 
+	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
 	require $locConfig;
 	$con=con($server);
 
