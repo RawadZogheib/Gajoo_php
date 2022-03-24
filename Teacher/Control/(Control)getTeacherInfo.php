@@ -11,6 +11,9 @@ require $locVersionTest;
 	
 	$json_array[0] = 'error10';
 
+	require $locConfig;
+	$con=con($server);
+
 	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherName.inc.php';
 	if(mysqli_num_rows($x1) > 0){
 
