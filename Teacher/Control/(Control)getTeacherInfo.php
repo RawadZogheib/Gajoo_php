@@ -25,7 +25,6 @@ require $locVersionTest;
 			if(mysqli_num_rows($x2) > 0){
 				$t1 = 1;
 				while($res2 = mysqli_fetch_assoc($x2)){
-					if($teacher_Id == $res2["teacher_Id"]){
 						$teacher_array[] = array(
 							$res1['teacher_Id'],
 							$res1["teacher_name"],
@@ -33,7 +32,6 @@ require $locVersionTest;
 							$res2["characteristic_t_language"],
 							$res2["characteristic_t_level"],
 						);
-					}
 				}
 			}else $teacher_array[] = [];
 		}
