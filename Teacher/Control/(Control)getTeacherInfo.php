@@ -18,43 +18,43 @@ require $locVersionTest;
 
 	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherName.inc.php';
 	if(mysqli_num_rows($x1) > 0){
-
+		$t1 = 1;
 		while($res1 = mysqli_fetch_assoc($x1)){
 			$teacher_Id = $res1["teacher_Id"];
+			$res1["teacher_name"];
 			require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherInfo.inc.php';
 			if(mysqli_num_rows($x2) > 0){
-				$t1 = 1;
+				$t2 = 1;
+				$i = 0;
 				while($res2 = mysqli_fetch_assoc($x2)){
-					if($teacher_Id == $res2["teacher_Id"]){
-						$teacher_array[] = array(
-							$res1['teacher_Id'],
-							$res1["teacher_name"],
-							$res2["characteristic_t_type"],
-							$res2["characteristic_t_language"],
-							$res2["characteristic_t_level"],
-						);
-					}
+					$teacher_array[2][$i++] = array(
+						$res2["characteristic_t_type"],
+						$res2["characteristic_t_language"],
+						$res2["characteristic_t_level"],
+					);
 				}
-			}else $teacher_array[] = [];
+			}else if(mysqli_num_rows($x2) == 0){
+				$t2 = 2;
+				$teacher_array[2] = array();
+		
+			}
 		}
-	}else $teacher_array[] = [];
+	}else if(mysqli_num_rows($x1) == 0){
+        $t1 = 2;
+        $teacher_array = array();
+
+    }
 
 	$json_array[1] = $teacher_array;
 
 
-    // if(mysqli_num_rows($xx)>0){
-	// 	$t1 = 1;
-	// 	$ress = mysqli_fetch_assoc($xx);
-	// 	$accountId=$ress["account_Id"];
-	// 	$json_array[1] = array($accountId,
-	// 						   $ress["account_email"]
-	// 								);
+	if($t1 == 1 || $t2 == 1){
+        $json_array[0] = 'success';
+    }else if($t1 == 2 && $t2 == 2){
+        $json_array[0] = 'empty';
+    }
 
-	// }else $json_array[1] = [];
 
-	if($t1 == 1){
-		$json_array[0] = 'true';
-	}
 	//echo [$una,$maa,$mia];
     //echo '["'.$una.'","'.$maa.'","'.$mia.'"]';
     echo json_encode($json_array);
