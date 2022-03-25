@@ -7,8 +7,9 @@ $locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Contro
 if(require $locTokenCheck){
 
     $locError7 =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
-    if(!empty($data->date)){
+    if(!empty($data->teacher_Id) && !empty($data->date)){
 
+        $teacher_Id = htmlspecialchars($data->teacher_Id);
         $date = htmlspecialchars($data->date);
 
         $locGetHoursMins = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Calendar/Model/(Model)getHoursMins.inc.php';

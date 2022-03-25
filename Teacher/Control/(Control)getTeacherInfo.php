@@ -36,7 +36,7 @@ require $locVersionTest;
 				}
 			}else if(mysqli_num_rows($x2) == 0){
 				$t2 = 2;
-				$json_array[2] = array();
+				$json_array[1][$i][2] = array();
 		
 			}
 			$i++;
@@ -49,7 +49,7 @@ require $locVersionTest;
 
 	if($t1 == 1 || $t2 == 1){
         $json_array[0] = 'success';
-    }else if($t1 == 2 && $t2 == 2){
+    }else if($t1 == 2){
         $json_array[0] = 'empty';
     }
 
