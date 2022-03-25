@@ -40,9 +40,9 @@ if(require $locTokenCheck){
     $json_array[1] = $greenList;
     $json_array[2] = $redList;
 
-    if($t1 == 1 || t2 == 1){
+    if($t1 == 1 || $t2 == 1){
         $json_array[0] = 'success';
-    }else if($t1 == 2 && t2 == 2){
+    }else if($t1 == 2 && $t2 == 2){
         $json_array[0] = 'empty';
     }
     echo json_encode($json_array);
