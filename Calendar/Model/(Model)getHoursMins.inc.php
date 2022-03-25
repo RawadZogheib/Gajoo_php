@@ -1,12 +1,13 @@
 <?php 
 
-	$sql = "SELECT c.course_Id, 
-                    c.course_date_of_begin, 
-                    c.course_max_students, 
-                    c.course_duration, 
+	$sql = "SELECT c.course_Id,
+                    c.course_date_of_begin,
                     (SELECT count(*) 
-                                                FROM `course_reserved` as cr 
-                                                WHERE c.course_Id =cr.course_Id) as participants
+                                                FROM `course_reserved` as cr
+                                                WHERE c.course_Id =cr.course_Id) as participants,
+                    c.course_max_students,
+                    c.course_duration,
+
                 FROM `course` as c
                 WHERE c.course_date_of_begin BETWEEN '2022-3-27 00:00:00' AND '2022-3-27 23:59:59'";
 
