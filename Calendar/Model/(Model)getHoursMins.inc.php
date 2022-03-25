@@ -9,7 +9,7 @@
                     c.course_duration
 
                 FROM `course` as c
-                WHERE c.course_date_of_begin BETWEEN '2022-3-27 00:00:00' AND '2022-3-27 23:59:59'";
+                WHERE c.course_date_of_begin BETWEEN '".$date." 00:00:00' AND '".$date." 23:59:59'";
 
 	$xx = mysqli_query($con,$sql);	
 		
