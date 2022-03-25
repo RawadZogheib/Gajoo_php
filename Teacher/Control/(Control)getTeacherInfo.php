@@ -21,7 +21,8 @@ require $locVersionTest;
 		$t1 = 1;
 		while($res1 = mysqli_fetch_assoc($x1)){
 			$teacher_Id = $res1["teacher_Id"];
-			$res1["teacher_name"];
+			$teacher_array = $res1["Teacher_Id"];
+			$teacher_array = $res1["teacher_name"];
 			require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherInfo.inc.php';
 			if(mysqli_num_rows($x2) > 0){
 				$t2 = 1;
