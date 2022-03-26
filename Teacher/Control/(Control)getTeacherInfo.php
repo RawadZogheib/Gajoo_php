@@ -28,7 +28,7 @@ require $locVersionTest;
 				$t2 = 1;
 				$j = 0;
 				while($res2 = mysqli_fetch_assoc($x2)){
-					$json_array[1][$i][2][$j] = array(
+					$json_array[1][$i][3][$j] = array(
 						$res2["characteristic_t_type"],
 						$res2["characteristic_t_language"],
 						$res2["characteristic_t_level"],
