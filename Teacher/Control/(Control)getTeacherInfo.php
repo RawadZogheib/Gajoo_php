@@ -15,13 +15,14 @@ require $locVersionTest;
 	require $locConfig;
 	$con=con($server);
 
-	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherName.inc.php';
+	require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherIdNameDate.inc.php';
 	if(mysqli_num_rows($x1) > 0){
 		$t1 = 1;
 		$i = 0;
 		while($res1 = mysqli_fetch_assoc($x1)){
 			$json_array[1][$i][0] = $res1["teacher_Id"];
 			$json_array[1][$i][1] = $res1["teacher_name"];
+			$json_array[1][$i][2] = $res1["teacher_dateOfBirth"];
 			require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getTeacherInfo.inc.php';
 			if(mysqli_num_rows($x2) > 0){
 				$t2 = 1;
