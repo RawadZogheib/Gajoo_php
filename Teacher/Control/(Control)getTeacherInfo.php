@@ -37,7 +37,7 @@ require $locVersionTest;
 				}
 			}else if(mysqli_num_rows($x2) == 0){
 				$t2 = 2;
-				$json_array[1][$i][2] = array();
+				$json_array[1][$i][3] = array();
 		
 			}
 			$i++;
