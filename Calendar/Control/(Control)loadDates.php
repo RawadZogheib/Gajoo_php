@@ -54,7 +54,7 @@ if(require $locTokenCheck){
 
         mysqli_close($con);
     }else require $locError7;
-}else require $_SERVER["DOCUMENT_ROOT"]  . '/moonLighters_php/Error/View/(View)errorToken.php'; //JSON or GET is empty
+}else require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)errorToken.php'; //JSON or GET is empty
  
 
 ?>
