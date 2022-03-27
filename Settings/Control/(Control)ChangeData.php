@@ -15,12 +15,17 @@ if(require $locTokenCheck){
         $username = htmlspecialchars($data->username);
 
 
+        $locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
         $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
         $locChangeData = require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Settings/Model/(Model)changeData.php';
 
-        require $locChangeData;
+        if(require $locChangeData){
+            require $locSuccess;
+        }else{
+            require $locError4;
+        }
 
-        require $locSuccess;
+        mysqli_close($con);
 
     }else require $locError7;//7 Field cannot be empty.
 
