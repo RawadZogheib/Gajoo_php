@@ -7,9 +7,9 @@ if(require $locTokenCheck){
 
     $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
-    if(!empty($data->email) && !empty($data->fname) && !empty($data->lname) && !empty($data->username)){
+    if(!empty($data->account_Id) && !empty($data->fname) && !empty($data->lname) && !empty($data->username)){
 
-        $email = htmlspecialchars($data->email);
+        $account_Id = htmlspecialchars($data->account_Id);
         $fname = htmlspecialchars($data->fname);
         $lname = htmlspecialchars($data->lname);
         $username = htmlspecialchars($data->username);
@@ -18,6 +18,7 @@ if(require $locTokenCheck){
         $locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
         $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
         $locChangeData = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Settings/Model/(Model)changeData.inc.php';
+        
 
         if(require $locChangeData){
             require $locSuccess;
