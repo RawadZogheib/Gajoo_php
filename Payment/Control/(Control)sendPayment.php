@@ -7,36 +7,31 @@ $locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Contro
 if(require $locTokenCheck){
 
     $locError7 =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
-    if(!empty($data->teacher_Id)){
+    if(!empty($data->payment_code) && !empty($data->coupon_amount)){
 
-    $locGetcoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)getcoupons.inc.php';
-    
-    $json_array[0] = 'error4';
+        $locError4 =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
+        $locGetSpecificCoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)getSpecificCoupons.inc.php';
+        $locInsertcoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)insertCoupons.inc.php';
+        $locUpdatecoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)updateCoupons.inc.php';
+        
+        $payment_code = htmlspecialchars($data->payment_code);
+        $coupon_amount = htmlspecialchars($data->coupon_amount);
+        
+        require $locGetSpecificCoupons;
+        if(mysqli_num_rows($yy) == 0){
+            require $locInsertcoupons;
+            if($yy1){
+                echo '["success"]';
+            }else require $locError4;//4 Cannot connect to the dataBase.
 
-    require $locGetcoupons;
-    if(mysqli_num_rows($xx)>0){
-        $t1 = 1;
-        $ress = mysqli_fetch_assoc($xx);
-        if($ress["redcoupon"]==null){$redcoupon = '0';}else{$redcoupon = $ress["redcoupon"];}
-        if($ress["yellowcoupon"]==null){$yellowcoupon = '0';}else{$yellowcoupon = $ress["yellowcoupon"];}
-        if($ress["bluecoupon"]==null){$bluecoupon = '0';}else{$bluecoupon = $ress["bluecoupon"];}
-        if($ress["greencoupon"]==NULL){$greencoupon = '0';}else{$greencoupon = $ress["greencoupon"];}
+        }else  if(mysqli_num_rows($yy) == 1){
+            $totalAmount = $res['coupon_amount'] + $coupon_amount;
+            require $locUpdatecoupons;
+            if($yy2){
+                echo '["success"]';
+            }else require $locError4;//4 Cannot connect to the dataBase.
 
-        $json_array[1] = array(	$redcoupon,
-                                $yellowcoupon,
-                                $bluecoupon,
-                                $greencoupon,
-                                    );
-
-    }else $json_array[1] = [];
-
-    if($t1 == 1){
-        $json_array[0] = 'success';
-    }
-    //echo [$una,$maa,$mia];
-    //echo '["'.$una.'","'.$maa.'","'.$mia.'"]';
-        echo json_encode($json_array);
-
+        }else require $locError4;//4 Cannot connect to the dataBase.
         
     }else require $locError7;
 }else require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)errorToken.php'; //JSON or GET is empty
