@@ -25,6 +25,7 @@ if(require $locTokenCheck){
 	    $passRegExp = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&:,?_-]).{8,}$/";
         
 
+        require $locgetPass;
         if(mysqli_num_rows($x1) > 0 ){
             if($account_Id == $xx1["account_password"]){
                 if(strlen($password) <8){
