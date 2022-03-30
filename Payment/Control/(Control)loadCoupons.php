@@ -14,12 +14,14 @@ if(require $locTokenCheck){
     if(mysqli_num_rows($xx)>0){
         $t1 = 1;
         $ress = mysqli_fetch_assoc($xx);
+        if($ress["freecoupon"]==null){$freecoupon = '0';}else{$freecoupon = $ress["freecoupon"];}
         if($ress["redcoupon"]==null){$redcoupon = '0';}else{$redcoupon = $ress["redcoupon"];}
         if($ress["yellowcoupon"]==null){$yellowcoupon = '0';}else{$yellowcoupon = $ress["yellowcoupon"];}
         if($ress["bluecoupon"]==null){$bluecoupon = '0';}else{$bluecoupon = $ress["bluecoupon"];}
         if($ress["greencoupon"]==NULL){$greencoupon = '0';}else{$greencoupon = $ress["greencoupon"];}
 
-        $json_array[1] = array(	$redcoupon,
+        $json_array[1] = array(	$freecoupon,
+                                $redcoupon,
                                 $yellowcoupon,
                                 $bluecoupon,
                                 $greencoupon,
