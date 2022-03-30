@@ -28,9 +28,9 @@ if(require $locTokenCheck){
         require $locgetPass;
         if(mysqli_num_rows($x1) > 0 ){
             if($password == $xx1["account_password"]){
-                if(strlen($password) <8){
+                if(strlen($password2) <8){
                     require $locError2_3;//2_3 Your password must contain at least 8 characters, 1 lowercase(a-z),1 uppercase(A-Z),1 numeric character(0-9) and 1 special character(* . ! @ # $ % ^ & : , ? _ -).
-                }else if(!preg_match($passRegExp, $password)){
+                }else if(!preg_match($passRegExp, $password2)){
                     require $locError2_3;//2_3 Your password must contain at least 8 characters, 1 lowercase(a-z),1 uppercase(A-Z),1 numeric character(0-9) and 1 special character(* . ! @ # $ % ^ & : , ? _ -).
                 }else if($password2 != $password3){
                         require $locError3;//3 Please make sure your passwords match.
