@@ -11,7 +11,7 @@ require $locVersionTest;
       require  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)vCode.php';
 
       $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeException.php';
-      
+      $locError2_5 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_5.php';
       $emailRegExp = "/[a-zA-Z0-9]+@(g|hot)mail.com/";
 
 
