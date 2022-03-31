@@ -21,7 +21,7 @@ if(require $locTokenCheck){
         $locError3 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error3.php';
         $locError2_3 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error2_3.php';
         $locgetPass = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Settings/Model/(Model)getPass.inc.php';
-        $locSetPassDb = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Settings/Model/(Model)getPass.inc.php';
+        $locSetPassDb = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Settings/Model/(Model)updatePass.inc.php';
         
 	    $passRegExp = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&:,?_-]).{8,}$/";
         
