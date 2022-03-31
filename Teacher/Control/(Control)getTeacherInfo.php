@@ -5,11 +5,12 @@ require $locVersionTest;
 
 	//Get the data from Flutter
     $json_array = array();
-	
+	$t1 = 0;
+    $t2 = 0;
 
     //Get Globals List
 	
-	$json_array[0] = 'error10';
+	$json_array[0] = 'error4';
 
 	$locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
 	require $locConfig;
