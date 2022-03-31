@@ -6,11 +6,11 @@ require $locVersionTest;
 $locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCheck.php';
 if(require $locTokenCheck){
 
-    $locGetcoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)getcoupons.inc.php';
+    $locGetCoupons = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Payment/Model/(Model)getCoupons.inc.php';
     
     $json_array[0] = 'error4';
 
-    require $locGetcoupons;
+    require $locGetCoupons;
     if(mysqli_num_rows($xx)>0){
         $t1 = 1;
         $ress = mysqli_fetch_assoc($xx);
