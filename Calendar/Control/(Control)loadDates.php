@@ -14,10 +14,10 @@ if(require $locTokenCheck){
 
         $teacher_Id = htmlspecialchars($data->teacher_Id);
 
-        $greenList = array();
-        $redList = array();
         $t1=0;
         $t2=0;
+        $greenList = array();
+        $redList = array();
 
         require $locGetGreenDates;
         if(mysqli_num_rows($xx1)>0){

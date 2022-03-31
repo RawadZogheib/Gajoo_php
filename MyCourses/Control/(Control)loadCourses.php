@@ -11,6 +11,8 @@ if(require $locTokenCheck){
     $locGetNbOfCourseReserved = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/MyCourses/Model/(Model)getNbOfCourseReserved.inc.php';
     $locGetTeacherInfo = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/MyCourses/Model/(Model)getTeacherInfo.inc.php';
     
+    $t1 = 0;
+    $t2 = 0;
     $json_array = array();
     $json_array[0] = 'error4';
 	
