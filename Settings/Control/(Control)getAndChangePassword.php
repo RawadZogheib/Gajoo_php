@@ -1,6 +1,7 @@
 <?php
 $locVersionTest = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)versionTest.php';
 require $locVersionTest;
+$option = array('cost'=>11);
 
 $locTokenCheck = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCheck.php';
 if(require $locTokenCheck){
@@ -28,17 +29,22 @@ if(require $locTokenCheck){
         require $locgetPass;
         if(mysqli_num_rows($x1) > 0 ){
             echo $xx1["account_password"];
-            if($password == $xx1["account_password"]){
-                if(strlen($password2) <8){
+            if(password_verify($password, $xx1["account_password"])){
+                if(strlen($password2) < 8){
                     require $locError2_3;//2_3 Your password must contain at least 8 characters, 1 lowercase(a-z),1 uppercase(A-Z),1 numeric character(0-9) and 1 special character(* . ! @ # $ % ^ & : , ? _ -).
                 }else if(!preg_match($passRegExp, $password2)){
                     require $locError2_3;//2_3 Your password must contain at least 8 characters, 1 lowercase(a-z),1 uppercase(A-Z),1 numeric character(0-9) and 1 special character(* . ! @ # $ % ^ & : , ? _ -).
                 }else if($password2 != $password3){
                         require $locError3;//3 Please make sure your passwords match.
-                }else if(require $locSetPassDb){
-                    require $locSuccess;
-                }
+                }else {
+                    if(password_needs_rehash($password2, PASSWORD_BCRYPT, $option)){
+                        $newHash = password_hash($password2, PASSWORD_BCRYPT, $option); //rehash password
+                        if(require $locSetPassDb){
+                            require $locSuccess;
+                        }
                 
+                    }
+                }
             }else{
                 require $locError3;
             }
