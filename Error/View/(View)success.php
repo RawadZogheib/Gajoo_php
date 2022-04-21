@@ -1,6 +1,6 @@
 <?php
 
-	echo '["success","'.$token.'"]';
+	echo '["success"]';
 	exit(0);
 
 ?>

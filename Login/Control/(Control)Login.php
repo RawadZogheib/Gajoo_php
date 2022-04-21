@@ -19,8 +19,7 @@ if(!empty($data->email) && !empty($data->password)){
 	$locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)getGlobals.php';
 	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
 	$locError8 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error8.php';
-	$locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
-	$locGetIsRegistered = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getIsRegistered.inc.php';
+	$locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
 
 	require $locConfig;
 	$con=con($server);
@@ -41,13 +40,10 @@ if(!empty($data->email) && !empty($data->password)){
 					// set password success
 					require $locTokenCreate; //return $token & $tokenHashed
 					if($yy2){
-						require $locGetIsRegistered;
-						if($reg1["isRegistered"] == 1){
 							require $locGetGlobals;
-						}else{
-							require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
-							require $locTrue;
-						}
+							if($ress["isRegistered"] == "0"){
+								require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
+							}
 					}else{
 						require $locError4; //4 Cannot connect to the dataBase.
 					} 
@@ -58,13 +54,10 @@ if(!empty($data->email) && !empty($data->password)){
 			}else{ 
 				require $locTokenCreate; //return $token & $tokenHashed
 				if($yy2){
-					require $locGetIsRegistered;
-					if($reg1["isRegistered"] == 1){
 						require $locGetGlobals;
-					}else{
-						require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
-						require $locTrue;
-					}
+						if($ress["isRegistered"] == "0"){
+							require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)phpMailer.php';
+						}
 				}else{
 					require $locError4; //4 Cannot connect to the dataBase.
 				}

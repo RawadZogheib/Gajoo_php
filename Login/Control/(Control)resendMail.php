@@ -13,7 +13,7 @@ require $locVersionTest;
       $locCodeException =  $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeException.php';
       $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
       $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
-      $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+      $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
       
       $emailRegExp = "/[a-zA-Z0-9]+@(g|hot)mail.com/";
 
@@ -57,7 +57,7 @@ require $locVersionTest;
                 if($gg1['account_Id']){
                 require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getAccountIdFromMailCode.inc.php';// get Id
                     if($mc["nbr"] > 0){
-                        //require $locTrue;
+                        //require $locSuccess;
                         $account_Id = $mc["account_Id"];
                         require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)updateCode.inc.php';
                         //require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)insertCountCodeSent.inc.php';//insert the counter
@@ -65,7 +65,7 @@ require $locVersionTest;
                     }else{
                         $account_Id = $gg1['account_Id'];
                         require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)insertCode.inc.php';
-                        //require $locTrue;
+                        //require $locSuccess;
                     }
                 }else{
                     require $locCodeException;

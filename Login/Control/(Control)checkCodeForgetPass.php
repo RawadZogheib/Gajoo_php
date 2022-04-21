@@ -14,7 +14,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.ph
         $locCodeFailed = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)codeFailed.php';
         $locGetGlobals = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)getGlobals.php';
         //$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
-        $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+        $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
         //$locTokenCreate = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Control/(Control)tokenCreate.php';
         $locDeleteCodeForgPass = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)deleteCodeForgPass.inc.php';
         
@@ -33,7 +33,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.ph
                 $kk1 = mysqli_fetch_assoc($k1);
                 if($code == $kk1['vCode']){
                         require $locDeleteCodeForgPass;
-                        require $locTrue;
+                        require $locSuccess;
                 }else{
                     require $locCodeFailed;
                 }

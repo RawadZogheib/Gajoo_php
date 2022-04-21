@@ -9,7 +9,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.ph
         $email = htmlspecialchars($data->email);
         
         $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
-        $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+        $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
         $locError11 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error11.php';
         $locError12 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error12.php';
         
@@ -21,7 +21,7 @@ $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.ph
             require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)getIsRegistered.inc.php';
             if($reg1['isRegistered'] == 1){
                 require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Control/(Control)phpMailerForgetPass.php';
-                require $locTrue;
+                require $locSuccess;
             }else{
                 require $locError11;
             }

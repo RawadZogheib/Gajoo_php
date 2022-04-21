@@ -20,7 +20,7 @@
 	}else $json_array[1] = [];
 
 	if($t1 == 1){
-		$json_array[0] = 'true';
+		$json_array[0] = 'success';
 	}
 	//echo [$una,$maa,$mia];
     //echo '["'.$una.'","'.$maa.'","'.$mia.'"]';

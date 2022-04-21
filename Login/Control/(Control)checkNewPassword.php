@@ -14,7 +14,7 @@ if(!empty($data->email) && !empty($data->password)  && !empty($data->repassword)
     $locEncryptSet = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Control/(Control)encryptSet.php';
     $locUpdatePass = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Login/Model/(Model)updatePass.inc.php';
     $locGetAccId = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Registration/Model/(Model)getAccountId.inc.php';
-    $locTrue = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)true.php';
+    $locSuccess = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)success.php';
 
     $passRegExp = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&:,?_-]).{8,}$/";
 
@@ -33,7 +33,7 @@ if(!empty($data->email) && !empty($data->password)  && !empty($data->repassword)
         }else{
             require $locEncryptSet;
             require $locUpdatePass;
-            require $locTrue;
+            require $locSuccess;
         }
 
     }else{
