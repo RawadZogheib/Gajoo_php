@@ -56,6 +56,14 @@ require $locVersionTest;
 				$json_array[1][$i][5] = array();
 		
 			}
+
+			require $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Teacher/Model/(Model)getIfLiked.inc.php';
+			if(mysqli_num_rows($x6) > 0){
+				$json_array[1][$i][6] = $res6['isLiked'];
+			}else if(mysqli_num_rows($x6) == 0){
+				$json_array[1][$i][6] = array();
+			}
+
 			$i++;
 		}
 	}else if(mysqli_num_rows($x1) == 0){

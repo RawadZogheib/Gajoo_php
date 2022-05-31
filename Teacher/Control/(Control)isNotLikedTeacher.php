@@ -4,10 +4,10 @@ require $locVersionTest;
 
 $locError7 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error7.php';
 
-if(!empty($data->email) && !empty($data->teacher_Id) && !empty($data->isLiked)){
+if(!empty($data->email) && !empty($data->teacher_Id)){
 	$email = htmlspecialchars($data->email);
     $teacher_Id = htmlspecialchars($data->teacher_Id);
-	$isLiked = htmlspecialchars($data->isLiked);
+	
 
     $locConfig = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Config/Model/(Model)config.inc.php';
 	$locError4 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error4.php';
