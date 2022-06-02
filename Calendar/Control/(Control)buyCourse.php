@@ -22,6 +22,7 @@ if(require $locTokenCheck){
         $locError411 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error411.php';
         $locError412 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error412.php';
         $locError413 = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Error/View/(View)error413.php';
+        $locSendAllMail = $_SERVER["DOCUMENT_ROOT"]  . '/gajoo_php/Calendar/Control/(Control)sendAllMails.php';
 
         require $locCheckCourseNotTaken;
         
@@ -40,6 +41,7 @@ if(require $locTokenCheck){
                             require $locReserveCourse;
                             if($yy4){// Remove course
                                 mysqli_close($con);
+                                require $locSendAllMail;
                                 require $locSuccess;
                             }else{
                                 mysqli_close($con);
