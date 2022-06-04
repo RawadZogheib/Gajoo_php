@@ -25,8 +25,8 @@ if(!preg_match($emailRegExp,$email)){
       $mail->SMTPSecure = "tls";
       $mail->Port       = 587;
       $mail->Host       = "smtp.gmail.com";
-      $mail->Username   = "gajoo5@hotmail.com";
-      $mail->Password   = "gajoo123@";
+      $mail->Username   = "mimo.nr0520@gmail.com";
+      $mail->Password   = "Batikha05@1";
 
       $mail->IsHTML(true);
       $mail->AddAddress($email);
