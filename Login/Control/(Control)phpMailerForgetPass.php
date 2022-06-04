@@ -35,7 +35,7 @@ if(!empty($data->email)){
         $mail->Port       = 587;
         $mail->Host       = "smtp.gmail.com";
         $mail->Username   = "mimo.nr0520@gmail.com";
-        $mail->Password   = "Batikha05@1";
+        $mail->Password   = "Batikha05@12";
 
         $mail->IsHTML(true);
         $mail->AddAddress($email);
