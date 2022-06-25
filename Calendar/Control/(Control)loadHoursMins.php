@@ -28,7 +28,10 @@ if(require $locTokenCheck){
                                             $res["course_date_of_begin"],
                                             $res["participants"],
                                             $res["course_max_students"],
-                                            $res["course_duration"]);
+                                            $res["course_duration"],
+                                            $res["type"],
+                                            $res["language"],
+                                            $res["level"]);
             }	
         }else  if(mysqli_num_rows($xx) == 0){
             $t1 = 2;
