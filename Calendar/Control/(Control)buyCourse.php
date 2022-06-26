@@ -30,46 +30,65 @@ if(require $locTokenCheck){
 
             require $locCheckCourseExists;
             if(mysqli_num_rows($xx1) == 1){
-
+                $case = '-999';
                 require $locCheckWalletExists;
+                
                 if(mysqli_num_rows($xx2) == 1){// If Wallet Exists
 
-                    if($res1["course_max_students"] == 1 && ($res2["coupon_amount2"] >= 1 || $res2["coupon_amount3"] >= 1  || $res2["coupon_amount4"] >= 1)){// If you have enough bill (no-group)
-                        
-                        require $locUpdateWallets;
-                        if($yy3){
-                            require $locReserveCourse;
-                            if($yy4){// Remove course
-                                mysqli_close($con);
-                                require $locSendAllMail;
-                                require $locSuccess;
+                    if($res1["type"] == 'Language Lessons'){// If you have enough bill Grey or Red
+                        if($res1["course_max_students"] == 1){
+                            if($res2["coupon_amount1"] == 1){// If you have enough bill Grey
+                                $case = '1';
+                            }else if($res2["coupon_amount2"] >= 1){// If you have enough bill Red
+                                $case = '2';
                             }else{
                                 mysqli_close($con);
                                 require $locError4;
                             }
                         }else{
-                            mysqli_close($con);
-                            require $locError4;
-                        } 
-                    }else if($res1["course_max_students"] > 1 && $res2["coupon_amount5"] >= 1){// If you have enough bill (group)
-                        
-                        require $locUpdateWallets;
-                        if($yy3){
-                            require $locReserveCourse;
-                            if($yy4){// Remove course
-                                mysqli_close($con);
-                                require $locSuccess;
+                            if($res2["coupon_amount2"] >= 1){// If you have enough bill Red
+                                $case = '2';
                             }else{
                                 mysqli_close($con);
                                 require $locError4;
                             }
-                        }else{
-                            mysqli_close($con);
-                            require $locError4;
-                        } 
+                        }
+                        
+                    }else if($res1["type"] == 'Native Speaking' && $res2["coupon_amount3"] >= 1 ){// If you have enough bill Native Speaking
+                        $case = '3';
+                    }else if($res1["type"] == 'Audio Books' && $res2["coupon_amount4"] >= 1){// If you have enough bill Audio Books
+                        $case = '4';
+                    }else if($res1["type"] == 'Diploma Certificate' && $res2["coupon_amount5"] >= 1){// If you have enough bill Diploma Certificate
+                        $case = '5';
                     }else{
                         require $locError411;
                     }            
+                    
+
+
+
+                    require $locUpdateWallets;
+                    if($yy3){
+                        require $locReserveCourse;
+                        if($yy4){// Remove course
+                            mysqli_close($con);
+                            // require $locSendAllMail;
+                            require $locSuccess;
+                        }else{
+                            mysqli_close($con);
+                            require $locError4;
+                        }
+                    }else{
+                        mysqli_close($con);
+                        require $locError4;
+                    } 
+
+
+                    
+
+
+
+
 
                 }else require $locError410;
             }else require $locError412;

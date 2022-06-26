@@ -1,6 +1,7 @@
 <?php 
 
 	$sql1 = "SELECT `course_max_students` as course_max_students,
+					`price`,
 					`type`
 			 FROM `course` as c
 			 WHERE c.course_Id = '".$course_Id."' AND c.course_max_students > (SELECT count(*)
