@@ -29,6 +29,7 @@ if(require $locTokenCheck){
                                             $res["participants"],
                                             $res["course_max_students"],
                                             $res["course_duration"],
+                                            $res["price"],
                                             $res["type"],
                                             $res["language"],
                                             $res["level"]);

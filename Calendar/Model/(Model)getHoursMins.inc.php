@@ -7,6 +7,7 @@
                                                 WHERE c.course_Id =cr.course_Id) as participants,
                     c.course_max_students,
                     c.course_duration,
+                    c.price,
                     c.type,
                     c.language,
                     c.level
