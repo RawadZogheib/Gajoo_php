@@ -30,6 +30,7 @@ if(require $locTokenCheck){
                 $aud1['audio_theme'],
                 $aud1['audio_time'],
                 $aud1['audio_date'],
+                $aud1['audio_text'],
             );
             $i++;
         }
